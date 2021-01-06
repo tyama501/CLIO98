@@ -1,0 +1,59 @@
+CGROUP	GROUP	TEXT
+TEXT	CSEG
+
+liogcirc_::
+	PUSH	DS
+	PUSH	ES
+	PUSH	SS
+	PUSH	AX
+	PUSH	BX
+	PUSH	CX
+	PUSH	DX
+	PUSH	BP
+	PUSH	SP
+	PUSH	SI
+	PUSH	DI
+
+	SHR	AX,4
+	ADD	AX,BX
+	INC	AX
+	MOV	DS,AX
+
+	MOV	BP,SP
+	ADD	BP,24
+
+	XOR	BX,BX
+	MOV	DS:[0].W,CX	;X Center
+	MOV	DS:[2].W,DX	;Y Center
+
+	MOV	AX,SS:[BP]
+	MOV	DS:[4].W,AX	;X Radius
+	MOV	DS:[6].W,AX	;Y Radius
+
+	MOV	AX,SS:[BP+2]
+	MOV	DS:[8].B,AL	;Pallet Number
+
+	MOV	DS:[9].B,00h
+	MOV	DS:[10].W,0000h
+	MOV	DS:[12].W,0000h
+	MOV	DS:[14].W,0000h
+	MOV	DS:[16].W,0000h
+	MOV	DS:[18].B,00h
+	MOV	DS:[19].W,0000h
+	MOV	DS:[21].W,0000h
+
+	INT	0a8h
+
+	POP	DI
+	POP	SI
+	POP	SP
+	POP	BP
+	POP	DX
+	POP	CX
+	POP	BX
+	POP	AX
+	POP	SS
+	POP	ES
+	POP	DS
+
+	RET

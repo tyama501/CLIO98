@@ -1,0 +1,54 @@
+CGROUP	GROUP	TEXT
+TEXT	CSEG
+
+liogput2_::
+	PUSH	DS
+	PUSH	ES
+	PUSH	SS
+	PUSH	AX
+	PUSH	BX
+	PUSH	CX
+	PUSH	DX
+	PUSH	BP
+	PUSH	SP
+	PUSH	SI
+	PUSH	DI
+
+	SHR	AX,4
+	ADD	AX,BX
+	INC	AX
+	MOV	DS,AX
+
+	MOV	BP,SP
+	ADD	BP,24
+
+	XOR	BX,BX
+	MOV	DS:[0].W,CX	;Upper Left Corner X
+	MOV	DS:[2].W,DX	;Upper Left Corner Y
+
+	MOV	AX,SS:[BP]
+	MOV	DS:[4].W,AX	;JIS Code
+
+	MOV	DS:[6].B,00h
+	MOV	DS:[7].B,01h	;Color mode
+
+	MOV	AX,SS:[BP+2]
+	MOV	DS:[8].B,AL	;Foreground Color
+
+	MOV	DS:[9].B,00h	;Background Color
+
+	INT	0adh
+
+	POP	DI
+	POP	SI
+	POP	SP
+	POP	BP
+	POP	DX
+	POP	CX
+	POP	BX
+	POP	AX
+	POP	SS
+	POP	ES
+	POP	DS
+
+	RET

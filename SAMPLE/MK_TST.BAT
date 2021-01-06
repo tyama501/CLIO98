@@ -1,0 +1,1 @@
+lcc -o CLIOTST.EXE CLIOTST.C ..\*.A86

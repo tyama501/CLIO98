@@ -1,0 +1,40 @@
+CGROUP	GROUP	TEXT
+TEXT	CSEG
+
+liogcol2_::
+	PUSH	DS
+	PUSH	ES
+	PUSH	SS
+	PUSH	AX
+	PUSH	BX
+	PUSH	CX
+	PUSH	DX
+	PUSH	BP
+	PUSH	SP
+	PUSH	SI
+	PUSH	DI
+
+	SHR	AX,4
+	ADD	AX,BX
+	INC	AX
+	MOV	DS,AX
+
+	XOR	BX,BX
+	MOV	DS:[0].B,CL	;Pallet Number
+	MOV	DS:[1].W,DX	;Color Information
+
+	INT	0a4h
+
+	POP	DI
+	POP	SI
+	POP	SP
+	POP	BP
+	POP	DX
+	POP	CX
+	POP	BX
+	POP	AX
+	POP	SS
+	POP	ES
+	POP	DS
+
+	RET
