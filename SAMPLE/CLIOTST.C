@@ -36,7 +36,7 @@ int main(void)
     liogcol2(liobuf, i, col);
   }
 
-  liogcls();
+  liogcls(liobuf);
 
   for (i = 1; i <= 7; i++){
     liogcirc(liobuf, 256+i*16, 100, 20, i);
