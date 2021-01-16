@@ -1,10 +1,14 @@
 /* Flying jis 0x416b */
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "CLIO98.H"
 
 #define LIOSIZE 5200
+
+#define AVE_TIME 4
+#define AVE_SFT 2
 
 #define DEBUG 0
 
@@ -27,6 +31,10 @@ int main(void)
   int dx[7];
   int dy[7];
 
+  time_t cur_time = 0;
+  time_t prev_time = 0;
+  long delta_time;
+  int fcnt = 0;
   char c_key;
 
   lioaddr = (char *)calloc(LIOSIZE, sizeof(char));
@@ -52,6 +60,20 @@ int main(void)
   printf("Press q to exit\n");
 
   while (1){
+
+    cur_time = clock();
+    delta_time = cur_time - prev_time;
+
+    if (delta_time >= AVE_TIME){
+      if (prev_time != 0) {
+         printf("%5d ‘‹/sec\r", fcnt >> AVE_SFT);
+      }
+      prev_time = cur_time;
+      fcnt = 0;
+    }
+
+    fcnt++;
+
     for (i = 0; i < 7; i++){
       if (!alive[i]){
         alive[i] = 1;
