@@ -52,16 +52,25 @@ ycenter : y coordinate of the center
 radius : Radius  
 palnum : Pallet number  
 
+### GPSET
+    void liogpset(char far *liobuf, int xpset, int ypset, int palnum);
+Draw point.  
+xpset : x coordinate of the point  
+ypset : y coordinate of the point  
+palnum : Pallet number  
+
 ### GLINE
     void liogline(char far *liobuf, int xstart, int ystart, int xend, int yend, int palnum);
+    void lioglinb(char far *liobuf, int xstart, int ystart, int xend, int yend, int palnum, int boxnum);
 Draw line.  
-For now, a box filled with color is drawn.   
-The box and the filling parameter will be added later.  
+liogline() draws a box filled with color.
+lioglinb() has the parameter to select line, box, or filled box.    
 xstart : x coordinate for start  
 ystart : y coordinate for start  
 xend : x coordinate for end  
 yend : y coordinate for end  
 palnum : Pallet number  
+boxnum : box parameter (0:line, 1:box, 2:filled box)  
 
 ### GPUT2
     void liogput2(char far *liobuf, int xupperl, int yupperl, int jiscode, int fgcol);
