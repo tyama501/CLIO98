@@ -1,0 +1,71 @@
+CGROUP	GROUP	TEXT
+TEXT	CSEG
+
+lioglinb_::
+	PUSH	DS
+	PUSH	ES
+	PUSH	SS
+	PUSH	AX
+	PUSH	BX
+	PUSH	CX
+	PUSH	DX
+	PUSH	BP
+	PUSH	SP
+	PUSH	SI
+	PUSH	DI
+
+	SHR	AX,4
+	ADD	AX,BX
+	INC	AX
+	MOV	DS,AX
+
+	MOV	BP,SP
+	ADD	BP,24
+
+	XOR	BX,BX
+	MOV	DS:[0].W,CX	;X Start
+	MOV	DS:[2].W,DX	;Y Start
+
+	MOV	AX,SS:[BP]
+	MOV	DS:[4].W,AX	;X End
+
+	MOV	AX,SS:[BP+2]
+	MOV	DS:[6].W,AX	;Y End
+
+	MOV	AX,SS:[BP+4]
+	MOV	DS:[8].B,AL	;Pallet Number
+
+        MOV     AX,SS:[BP+6]
+        MOV     DS:[9].B,AL     ;0:Line, 1:Box, 2:Box Fill
+
+        MOV     DS:[10].B,00h
+        MOV     DS:[11].B,00h
+        CMP     AL,02h
+        JNZ     linexit
+
+	MOV	DS:[10].B,01h
+
+        MOV     AX,SS:[BP+4]
+	MOV	DS:[11].B,AL	;Pallet Number in Box Fill
+
+linexit::
+	MOV	DS:[12].B,00h
+	MOV	DS:[13].B,00h
+	MOV	DS:[14].W,0000h
+	MOV	DS:[16].W,0000h
+
+	INT	0a7h
+
+	POP	DI
+	POP	SI
+	POP	SP
+	POP	BP
+	POP	DX
+	POP	CX
+	POP	BX
+	POP	AX
+	POP	SS
+	POP	ES
+	POP	DS
+
+	RET

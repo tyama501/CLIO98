@@ -12,7 +12,7 @@ char far *liobuf;
 
 int main(void)
 {
-  int i;
+  int i, j;
   int col;
 
   lioaddr = (char *)calloc(LIOSIZE, sizeof(char));
@@ -45,6 +45,19 @@ int main(void)
   for (i = 0; i <= 7; i++){
     liogline(liobuf, 256+i*16, 200, 256+(i+1)*16, 230, i+8);
   }
+
+  for (j = 0; j < 8; j++){
+    for (i = 0; i < 8; i++){
+      liogpset(liobuf, 256+i*2, 250+j*2, 1);
+    }
+  }
+
+  lioglinb(liobuf, 300, 250, 308, 266, 3, 0);
+  lioglinb(liobuf, 300, 250, 292, 266, 3, 0);
+  lioglinb(liobuf, 292, 266, 308, 266, 3, 0);
+
+  lioglinb(liobuf, 332, 250, 348, 266, 5, 1);
+  lioglinb(liobuf, 372, 250, 388, 266, 5, 2);
 
   liogput2(liobuf, 300, 300, 0x3441, 4);
   liogput2(liobuf, 340, 300, 0x3b7a, 4);
