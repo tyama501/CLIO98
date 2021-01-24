@@ -10,6 +10,17 @@ with LSI C-86 compiler.
 ## Usage
 #include "CLIO98.H"
 
+## SAMPLES
+SAMPLE/CLIOTST.C  
+Draw circles and boxes.  
+Put Kanji.  
+
+SAMPLE2/CLIOTST2.C  
+Flying jis 0x416b.
+
+SAMPLE3/CLIOTST3.C
+Example of using GGET and GPUT. 
+
 ## Function
 
 ### Setting
@@ -100,13 +111,6 @@ xupperl : x coordinate for upper left
 yupperl : y coordinate for upper left  
 jiscode : jis code  
 fgcol : Pallet number for foreground color  
-
-## SAMPLES
-SAMPLE/CLIOTST.C  
-Draw circles and boxes.  
-Put Kanji.  
-
-SAMPLE/CLIOTST2.C  
-Flying jis 0x416b.  
+  
 
 
