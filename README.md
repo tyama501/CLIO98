@@ -72,6 +72,27 @@ yend : y coordinate for end
 palnum : Pallet number  
 boxnum : box parameter (0:line, 1:box, 2:filled box)  
 
+### GGET
+    void liogget(char far *liobuf, int xupperl, int yupperl, int xlowerr, int ylowerr, char far *gbuf, int gbuflen);
+Get graphic image to memory.  
+Allocate memory and give far pointer.  
+Please refer SAMPLE3.  
+xupperl : x coordinate for upper left of the image.  
+yupperl : y coordinate for upper left of the image.  
+xlowerr : x coordinate for lower right of the image.  
+ylowerr : y coordinate for lower right of the image.  
+gbuf : far pointer of the memory.  
+gbuflen : length of the memory.  
+
+### GPUT1
+    void liogput1(char far *liobuf, int xupperl, int yupperl, char far *gbuf, int gbuflen);
+Put graphic image of the memory.  
+Please refer SAMPLE3.  
+xupperl : x coordinate for upper left to put the image.  
+yupperl : y coordinate for upper left to put the image.  
+gbuf : far pointer of the memory.  
+gbuflen : length of the memory. 
+
 ### GPUT2
     void liogput2(char far *liobuf, int xupperl, int yupperl, int jiscode, int fgcol);
 Put character of jis code.  
