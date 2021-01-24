@@ -11,4 +11,6 @@ extern void liogcirc(char far *liobuf, int xcenter, int ycenter, int radius, int
 extern void liogpset(char far *liobuf, int xpset, int ypset, int palnum);
 extern void liogline(char far *liobuf, int xstart, int ystart, int xend, int yend, int palnum);
 extern void lioglinb(char far *liobuf, int xstart, int ystart, int xend, int yend, int palnum, int boxnum);
+extern void liogget(char far *liobuf, int xupperl, int yupperl, int xlowerr, int ylowerr, char far *gbuf, int gbuflen);
+extern void liogput1(char far *liobuf, int xupperl, int yupperl, char far *gbuf, int gbuflen);
 extern void liogput2(char far *liobuf, int xupperl, int yupperl, int jiscode, int fgcol);
