@@ -14,12 +14,15 @@ with LSI C-86 compiler.
 SAMPLE/CLIOTST.C  
 Draw circles and boxes.  
 Put Kanji.  
+<img src=IMAGE/CLIOTST_NP21W_3.png width="320pix">  
+Executed on Neko Project 21/W emulator.  
 
 SAMPLE2/CLIOTST2.C  
 Flying jis 0x416b.
 
-SAMPLE3/CLIOTST3.C
-Example of using GGET and GPUT. 
+SAMPLE3/CLIOTST3.C  
+Example of using GGET and GPUT.  
+<img src=IMAGE/CLIOTST3_NP21W.png width="320pix">  
 
 ## Function
 
