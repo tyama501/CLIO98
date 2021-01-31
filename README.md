@@ -24,6 +24,9 @@ SAMPLE3/CLIOTST3.C
 Example of using GGET and GPUT.  
 <img src=IMAGE/CLIOTST3_NP21W.png width="320pix">  
 
+SAMPLE4/CLIOTST4.C  
+Example to read the pallet number on the screen.
+
 ## Function
 
 ### Setting
@@ -115,5 +118,9 @@ yupperl : y coordinate for upper left
 jiscode : jis code  
 fgcol : Pallet number for foreground color  
   
-
-
+### GPOINT
+    char liogpoin(char far *liobuf, int xpoint, int ypoint);
+Read pallet number.  
+xpoint : x coordinate to read  
+ypoint : y coordinate to read  
+return value : pallet number  
