@@ -14,3 +14,4 @@ extern void lioglinb(char far *liobuf, int xstart, int ystart, int xend, int yen
 extern void liogget(char far *liobuf, int xupperl, int yupperl, int xlowerr, int ylowerr, char far *gbuf, int gbuflen);
 extern void liogput1(char far *liobuf, int xupperl, int yupperl, char far *gbuf, int gbuflen);
 extern void liogput2(char far *liobuf, int xupperl, int yupperl, int jiscode, int fgcol);
+extern char liogpoin(char far *liobuf, int xpoint, int ypoint);
