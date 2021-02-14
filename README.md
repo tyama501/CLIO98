@@ -25,7 +25,11 @@ Example of using GGET and GPUT.
 <img src=IMAGE/CLIOTST3_NP21W.png width="320pix">  
 
 SAMPLE4/CLIOTST4.C  
-Example to read the pallet number on the screen.
+Example to read the pallet number on the screen.  
+
+SAMPLE5/CLIOTST5.C  
+Example of rotating cube.  
+<img src=IMAGE/CLIOTST5_NP21W.png width="320pix">
 
 ## Function
 
