@@ -28,8 +28,8 @@ SAMPLE4/CLIOTST4.C
 Example to read the pallet number on the screen.  
 
 SAMPLE5/CLIOTST5.C  
-Example of rotating cube.  
-<img src=IMAGE/CLIOTST5_NP21W.png width="320pix">
+Example of rotating cube around y-axis.  
+<img src=IMAGE/CLIOTST_NP21W_5.png width="320pix">
 
 ## Function
 
