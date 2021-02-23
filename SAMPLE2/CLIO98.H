@@ -1,5 +1,8 @@
 /* CLIO98.H */
 
+#ifndef CLIO98_H
+#define CLIO98_H
+
 extern void lioset(void);
 extern void lioginit(char far *liobuf);
 extern void liogscre(char far *liobuf);
@@ -15,3 +18,5 @@ extern void liogget(char far *liobuf, int xupperl, int yupperl, int xlowerr, int
 extern void liogput1(char far *liobuf, int xupperl, int yupperl, char far *gbuf, int gbuflen);
 extern void liogput2(char far *liobuf, int xupperl, int yupperl, int jiscode, int fgcol);
 extern char liogpoin(char far *liobuf, int xpoint, int ypoint);
+
+#endif
