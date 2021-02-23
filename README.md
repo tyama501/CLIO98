@@ -29,7 +29,10 @@ Example to read the pallet number on the screen.
 
 SAMPLE5/CLIOTST5.C  
 Example of rotating cube around y-axis.  
+SAMPLE6/CLIOTST6.C  
+Mini Game of docking Space vessel to Space Station.  
 <img src=IMAGE/CLIOTST_NP21W_5.png width="320pix">
+<img src=IMAGE/CLIOTST6_NP21W.png width="320pix">
 
 ## Function
 
